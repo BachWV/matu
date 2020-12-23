@@ -20,9 +20,22 @@ double get_sum(double *a,int num){
     }
     return sum;
 }
-int main()
+int get_min(int *a,int num){
+    int temp=a[0];
+    for(int i=1;i<num;i++){
+        if(temp>a[i]) temp=a[i];
+    }
+    return temp;
+}
+double get_min(double *a,int num){
+    double temp=a[0];
+    for(int i=1;i<num;i++){
+        if(temp>a[i]) temp=a[i];
+    }
+    return temp;
+}
 
-{
+int main(){
 
     int arr_int[6] = { 1, 2, 3, 4, 5, 6 };
 
