@@ -46,12 +46,11 @@ private:
     int y;
 };
 Location & Location::operator +(Location &s){
-
-    this->x=s.x+ this->x;
-    this->y=s.y+this->y;
-
-    return *this;
-}
+Location s1(0,0);
+    s1.x=s.x+ this->x;
+    s1.y=s.y+this->y;
+    return s1;
+}//两种写法都可以
 Location & Location::operator -(Location &s){
 
     this->x=this->x-s.x;

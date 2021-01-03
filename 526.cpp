@@ -1,11 +1,11 @@
-/*node append
-通过课程进入	题 号:	525	node append	语言要求：	C++
+/*node insert
+通过课程进入	题 号:	526	node insert	语言要求：	C++
 编写一个表示链表节点的模板类node，实现链表节点的以下功能：
 set_value函数：设置节点值
 get_value函数：获取节点值
 get_prev函数：获取上一个节点
 get_next函数：获取下一个节点
-append函数：在当前节点之后追加新节点
+insert函数：在当前节点的位置插入新节点（当前节点后移）
 
 例如，下列程序中，
 test1函数的输出应为：1 2 3
@@ -13,40 +13,52 @@ test2函数的输出应为：1.1 2.2 3.3
 test3函数的输出应为：a b c
 
 部分代码已给出，请将代码补充完整。*/
+//注意：这题一定要删了//注释
 #include <iostream>
 
 using namespace std;
+
 template<class T>
 class node{
 private:
     T data;
+    node<T>* prev;
     node<T>* next;
 public:
-    node<T>() : next(NULL), data((T)0) {};
-    void set_value(T x){
-        data=x;
-    }
-    void append(node<T> *n){
-        next=n;
-    }
+
+    void set_value(T x){data=x;}
     T get_value(){
         return data;
     }
-    node<T> *get_next(){
+    node<T>*get_prev(){
+        return prev;
+    }
+    node<T>*get_next(){
         return next;
     }
+    void insert(node<T> *p){
+     p->next= this;
+     prev=p;
+
+    }
 };
+void test1()
 
+{
 
-void test1(){
     node<int> *ptr;
+
     node<int> node1,node2,node3;
+
     node1.set_value(1);
+
     node2.set_value(2);
 
     node3.set_value(3);
-    node1.append(&node2);
-    node2.append(&node3);
+
+    node3.insert(&node2);
+
+    node2.insert(&node1);
 
     for(ptr=&node1 ; ; ptr=ptr->get_next())
 
@@ -60,18 +72,23 @@ void test1(){
 
 }
 
-void test2(){
+void test2()
+
+{
+
     node<float> *ptr;
+
     node<float> node1,node2,node3;
+
     node1.set_value(1.1);
 
     node2.set_value(2.2);
 
     node3.set_value(3.3);
 
-    node1.append(&node2);
+    node3.insert(&node2);
 
-    node2.append(&node3);
+    node2.insert(&node1);
 
     for(ptr=&node1 ; ; ptr=ptr->get_next())
 
@@ -99,9 +116,9 @@ void test3()
 
     node3.set_value('c');
 
-    node1.append(&node2);
+    node3.insert(&node2);
 
-    node2.append(&node3);
+    node2.insert(&node1);
 
     for(ptr=&node1 ; ; ptr=ptr->get_next())
 
@@ -118,7 +135,9 @@ void test3()
 int main( )
 
 {
+
     int type;
+
     cin >> type;
 
 

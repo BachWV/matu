@@ -1,40 +1,32 @@
-//
-// Created by Charon on 2020/12/21.
-//
+//522 523 524
 
 #include <iostream>
 
 using namespace std;
-
-int get_sum(int *a,int num){
-    int sum=0;
+template<typename T>
+T get_sum(T *a,int num){
+    T sum=0;
     for(int i=0;i<num;i++){
         sum+=a[i];
     }
     return sum;
 }
-double get_sum(double *a,int num){
-    double sum=0;
-    for(int i=0;i<num;i++){
-        sum+=a[i];
-    }
-    return sum;
-}
-int get_min(int *a,int num){
-    int temp=a[0];
+/*template<typename T>
+T get_min(T *a,int num){
+    T temp=a[0];
     for(int i=1;i<num;i++){
         if(temp>a[i]) temp=a[i];
     }
     return temp;
 }
-double get_min(double *a,int num){
-    double temp=a[0];
+template<typename T>
+T get_max(T *a,int num){
+    T temp=a[0];
     for(int i=1;i<num;i++){
-        if(temp>a[i]) temp=a[i];
+        if(temp<a[i]) temp=a[i];
     }
     return temp;
-}
-
+}*/
 int main(){
 
     int arr_int[6] = { 1, 2, 3, 4, 5, 6 };
