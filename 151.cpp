@@ -76,7 +76,7 @@ public:
      char function[20];
     TeachBuilding(char *name,int floor,int room,int area,char *f):Building(name,floor,room,area){
         strcpy(this->function,f);
-    }//基类对象不能访问基类的protected成员，派生类中可以访问基类的protected成员。也就是说private成员是不能被继承的，只有public，protected的成员才可以被继承。
+    }//基类对象能访问基类的protected成员，派生类中可以访问基类的protected成员。也就是说private成员是不能被继承的，只有public，protected的成员才可以被继承。
     void display() {
         cout<<"Name:"<<name<<endl;
         cout<<"Floor:"<<floor<<endl;

@@ -28,14 +28,12 @@ test 1234567 test 123456»Ø³µ
 Login failed!*/
 using namespace std;
 typedef struct ppp {
-	
 	char* name;
 char *pass;
 }PPP;
 class User {
 public:
 	void AddUser(char* name, char* pass) {
-		len = 1;
 		ss[len].name = new char[10];
 		ss[len].pass = new char[10];
 		strcpy_s(ss[len].name, 10, name);
@@ -57,7 +55,7 @@ public:
 		ss[0].pass = new char[10];
 		strcpy_s(ss[0].name,10,a);
 		strcpy_s(ss[0].pass, 10,b);
-		
+		len++;
 	}
 private:
 	PPP ss[100];
