@@ -1,0 +1,30 @@
+#include<iostream.h>
+void main()
+{
+int i,k,a[10],b,max;
+for(i=0;i<=9;i++)
+{
+cin>>a[i];
+if(a[i]<0)
+{
+cout<<"?????????????"<<endl;
+break;
+}
+}
+for(k=0;k<=9;k++)
+{
+for(i=0;i<=8-k;i++)
+{
+b=a[i+1];
+if(a[i]>=a[i+1])
+{
+a[i+1]=a[i];
+a[i]=b;
+}
+}
+}
+cout<<"?????"<<a[k-1]<<endl;
+cout<<"??§³??"<<a[0]<<endl;
+for(i=0;i<=9;i++)
+cout<<a[i]<<endl;
+}
